@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B37BE71429D7A0A8002F8413 /* MARVEL API-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B37BE71329D7A0A8002F8413 /* MARVEL API-Info.plist */; };
 		B3A574F329A7D68C00B7509E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A574F229A7D68C00B7509E /* AppDelegate.swift */; };
 		B3A574F529A7D68C00B7509E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A574F429A7D68C00B7509E /* SceneDelegate.swift */; };
 		B3A574F729A7D68C00B7509E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A574F629A7D68C00B7509E /* ViewController.swift */; };
 		B3A574FA29A7D68C00B7509E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A574F829A7D68C00B7509E /* Main.storyboard */; };
 		B3A574FC29A7D68D00B7509E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A574FB29A7D68D00B7509E /* Assets.xcassets */; };
 		B3A574FF29A7D68D00B7509E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A574FD29A7D68D00B7509E /* LaunchScreen.storyboard */; };
+		B3A5750829A80FCE00B7509E /* MarvelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A5750729A80FCE00B7509E /* MarvelManager.swift */; };
+		B3F019B429A81F7400AAFF2F /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3F019B329A81F7400AAFF2F /* CryptoSwift */; };
+		B3F019B629A83E4700AAFF2F /* APIResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F019B529A83E4700AAFF2F /* APIResults.swift */; };
+		B3F019BA29A854AC00AAFF2F /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F019B929A854AC00AAFF2F /* ResultsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B37BE71329D7A0A8002F8413 /* MARVEL API-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MARVEL API-Info.plist"; sourceTree = "<group>"; };
 		B3A574EF29A7D68C00B7509E /* MarvelAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A574F229A7D68C00B7509E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3A574F429A7D68C00B7509E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,9 @@
 		B3A574FB29A7D68D00B7509E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3A574FE29A7D68D00B7509E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3A5750029A7D68D00B7509E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3A5750729A80FCE00B7509E /* MarvelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelManager.swift; sourceTree = "<group>"; };
+		B3F019B529A83E4700AAFF2F /* APIResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResults.swift; sourceTree = "<group>"; };
+		B3F019B929A854AC00AAFF2F /* ResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +40,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F019B429A81F7400AAFF2F /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B38BDF9929AAE9AC009733E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3A574F829A7D68C00B7509E /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B38BDF9A29AAE9C2009733E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B3A574F629A7D68C00B7509E /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B3A574E629A7D68C00B7509E = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +82,27 @@
 		B3A574F129A7D68C00B7509E /* MarvelAPI */ = {
 			isa = PBXGroup;
 			children = (
+				B3A5750629A80FBE00B7509E /* Model */,
+				B38BDF9929AAE9AC009733E1 /* Views */,
+				B38BDF9A29AAE9C2009733E1 /* Controller */,
 				B3A574F229A7D68C00B7509E /* AppDelegate.swift */,
 				B3A574F429A7D68C00B7509E /* SceneDelegate.swift */,
-				B3A574F629A7D68C00B7509E /* ViewController.swift */,
-				B3A574F829A7D68C00B7509E /* Main.storyboard */,
 				B3A574FB29A7D68D00B7509E /* Assets.xcassets */,
 				B3A574FD29A7D68D00B7509E /* LaunchScreen.storyboard */,
 				B3A5750029A7D68D00B7509E /* Info.plist */,
+				B37BE71329D7A0A8002F8413 /* MARVEL API-Info.plist */,
 			);
 			path = MarvelAPI;
+			sourceTree = "<group>";
+		};
+		B3A5750629A80FBE00B7509E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3A5750729A80FCE00B7509E /* MarvelManager.swift */,
+				B3F019B529A83E4700AAFF2F /* APIResults.swift */,
+				B3F019B929A854AC00AAFF2F /* ResultsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +121,9 @@
 			dependencies = (
 			);
 			name = MarvelAPI;
+			packageProductDependencies = (
+				B3F019B329A81F7400AAFF2F /* CryptoSwift */,
+			);
 			productName = MarvelAPI;
 			productReference = B3A574EF29A7D68C00B7509E /* MarvelAPI.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +152,9 @@
 				Base,
 			);
 			mainGroup = B3A574E629A7D68C00B7509E;
+			packageReferences = (
+				B3F019B229A81F7400AAFF2F /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+			);
 			productRefGroup = B3A574F029A7D68C00B7509E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A574FF29A7D68D00B7509E /* LaunchScreen.storyboard in Resources */,
+				B37BE71429D7A0A8002F8413 /* MARVEL API-Info.plist in Resources */,
 				B3A574FC29A7D68D00B7509E /* Assets.xcassets in Resources */,
 				B3A574FA29A7D68C00B7509E /* Main.storyboard in Resources */,
 			);
@@ -138,9 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F019BA29A854AC00AAFF2F /* ResultsModel.swift in Sources */,
+				B3A5750829A80FCE00B7509E /* MarvelManager.swift in Sources */,
 				B3A574F729A7D68C00B7509E /* ViewController.swift in Sources */,
 				B3A574F329A7D68C00B7509E /* AppDelegate.swift in Sources */,
 				B3A574F529A7D68C00B7509E /* SceneDelegate.swift in Sources */,
+				B3F019B629A83E4700AAFF2F /* APIResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +406,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B3F019B229A81F7400AAFF2F /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3F019B329A81F7400AAFF2F /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3F019B229A81F7400AAFF2F /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3A574E729A7D68C00B7509E /* Project object */;
 }
