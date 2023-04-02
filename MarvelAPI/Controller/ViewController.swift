@@ -16,6 +16,7 @@ var marvelManager = MarvelManager()
     
     @IBOutlet var characterTextField: UITextField!
     
+    @IBOutlet var descriptionLabel: UILabel!
     
 
   
@@ -42,15 +43,24 @@ extension ViewController: MarvelManagerDelegate{
     }
     
     func updateImage(_ marvelManager: MarvelManager, results: ResultsModel) {
-        
-        let image = getUrl(url: results.imageString)
-        characterImage.load(url: image!)
+        DispatchQueue.main.async {
+            let image = self.getUrl(url: results.imageString)
+            self.characterImage.load(url: image!)
+        }
+      
     }
     
     func didFailWithError(error: Error) {
             print(error)
     }
     
+    func getDescription(_ marvelManager: MarvelManager, results: ResultsModel){
+        
+        DispatchQueue.main.async {
+            self.descriptionLabel.text = results.description
+        }
+        
+    }
 }
 
 extension ViewController: UITextFieldDelegate{

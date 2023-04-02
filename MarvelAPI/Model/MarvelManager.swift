@@ -11,7 +11,7 @@ import CryptoSwift
 protocol MarvelManagerDelegate{
     func updateImage(_ marvelManager: MarvelManager, results: ResultsModel)
     func getUrl(url: String) -> URL?
-    
+    func getDescription(_ marvelManager: MarvelManager, results: ResultsModel)
     func didFailWithError(error: Error)
 }
 
@@ -82,9 +82,12 @@ struct MarvelManager {
                     if let image = self.parseJSON(safeData){
                         
                         delegate?.updateImage(self, results: image)
-                    }
+                        print (image.description)
+                        delegate?.getDescription(self, results: image)
+                   }
                 }
             }
+        
             task.resume()
         }
         
@@ -97,18 +100,22 @@ struct MarvelManager {
         do {
             let decodedData = try decoder.decode(APIResults.self, from: marvelData)
             
-            guard let character = decodedData.data.results.first else {
+            guard var character = decodedData.data.results.first else {
                 // no character found so bail out
                 return nil
             }
             
             let path = character.thumbnail.path
             let `extension` = character.thumbnail.extension
+            let charId = character.id
+            var descript = character.description
+            if character.description == ""{
+                descript = "No Available Description from Marvel's API"
+            }
             
-            //let path = decodedData.data.results[0].thumbnail.path
-            //let `extension` = decodedData.data.results[0].thumbnail.extension
+            let imagePath = ResultsModel(pathString: path, xtensionString: `extension`, characterId: charId, description: descript)
             
-            let imagePath = ResultsModel(pathString: path, xtensionString: `extension`)
+    
             
             return imagePath
         }

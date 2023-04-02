@@ -21,6 +21,8 @@ struct APICharacterData: Codable{
 
 
  struct Results : Codable{
+     var id: Int
+     var description: String
     var thumbnail : ThumbNail
 }
 struct ThumbNail: Codable {

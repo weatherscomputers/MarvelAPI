@@ -11,6 +11,8 @@ struct ResultsModel {
     
     let pathString: String?
     let xtensionString: String?
+    let characterId: Int?
+    let description: String?
     
     var imageString: String {
         let imagePath = "\(pathString!).\(xtensionString!)"
